@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     float playerSpeed = 10;
-    float jumpForce = 15;
+    float jumpForce = 20;
     bool isJump;
 
     Rigidbody2D rigid;

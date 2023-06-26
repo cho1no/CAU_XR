@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
-
+//국제적 어필 방법, 비즈니스모델(컨텐츠 비교분석)
 public class PlayerSkills : MonoBehaviour
 {
     public SOSkill[] skill;
@@ -53,7 +53,9 @@ public class PlayerSkills : MonoBehaviour
         switch (i)
         {
             case 0: //Flash
-                gameObject.transform.Translate(new Vector2(this.gameObject.transform.position.x + 10, 0));
+                float posX = this.gameObject.transform.position.x;
+                float posY = this.gameObject.transform.position.y;
+                gameObject.transform.Translate(new Vector2(posX + 10, posY));
                 break;
         }
         
