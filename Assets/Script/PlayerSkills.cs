@@ -64,7 +64,8 @@ public class PlayerSkills : MonoBehaviour
     // damage 정보 만큼 피해를 입힙니다.
     public void ActivateSkill(SOSkill skill)
     {
-        anim.Play(skill.animationName);
+        //anim.Play(skill.animationName);
+        anim.SetTrigger(skill.animationName);
         print(string.Format("적에게 스킬 {0} 로 {1} 의 피해를 주었습니다.", skill.name, skill.damage));
     }
     public void OnClicked(int i)

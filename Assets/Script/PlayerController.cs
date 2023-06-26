@@ -7,11 +7,15 @@ public class PlayerController : MonoBehaviour
     float playerSpeed = 10;
     float jumpForce = 15;
     bool isJump;
+
     Rigidbody2D rigid;
     SpriteRenderer spriteRenderer;
+
+    Animator ani;
     // Start is called before the first frame update
     void Start()
     {
+        ani = GetComponent<Animator>();
         rigid = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
@@ -29,12 +33,15 @@ public class PlayerController : MonoBehaviour
         {
             transform.Translate(new Vector2(-playerSpeed * Time.deltaTime, 0));
             spriteRenderer.flipX = true;
+            ani.SetBool("isRun", true);
         }
         if (Input.GetKey(KeyCode.RightArrow))
         {
             transform.Translate(new Vector2(playerSpeed * Time.deltaTime, 0));
             spriteRenderer.flipX = false;
+            ani.SetBool("isRun", true);
         }
+        if (!Input.GetKey(KeyCode.LeftArrow) && !Input.GetKey(KeyCode.RightArrow)) ani.SetBool("isRun", false);
     }
     void Jump()
     {
@@ -44,6 +51,7 @@ public class PlayerController : MonoBehaviour
             {
                 isJump = true;
                 rigid.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                ani.SetTrigger("doJump");
             }
             //transform.Translate(new Vector2(0, jumpForce * Time.deltaTime));
         }
