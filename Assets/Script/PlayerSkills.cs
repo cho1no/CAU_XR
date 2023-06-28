@@ -6,17 +6,22 @@ using UnityEngine.UI;
 //국제적 어필 방법, 비즈니스모델(컨텐츠 비교분석)
 public class PlayerSkills : MonoBehaviour
 {
+    public GameObject[] Effect;
     public SOSkill[] skill;
+    
     //public GameObject[] skills;
     public Image[] imgIcon;
     public Image[] imgCool;
 
-    Animator anim;
 
+    Animator anim;
+    Rigidbody2D rb;
+    SpriteRenderer sr;
     private void Start()
     {
         anim = GetComponent<Animator>();
-        
+        rb = GetComponent<Rigidbody2D>();
+        sr = GetComponent<SpriteRenderer>();
         for (int i = 0; i < skill.Length; i++)
         {
             imgIcon[i].sprite = skill[i].icon;
@@ -50,17 +55,35 @@ public class PlayerSkills : MonoBehaviour
     public void SkillActive(int i)
     {
         //if (imgCool[i].fillAmount > 0) return;
+
         switch (i)
         {
             case 0: //Flash
                 float posX = this.gameObject.transform.position.x;
                 float posY = this.gameObject.transform.position.y;
-                gameObject.transform.Translate(new Vector2(posX + 10, posY));
+                Instantiate(Effect[0], new Vector3(posX, posY, 0), Quaternion.identity);
+
+                gameObject.transform.position += new Vector3(posX+10, posY+0.2f, 0);
+                rb.gravityScale = 0;
+                //sr.color = new Color32(255, 255, 255, 0);
+                gameObject.SetActive(false);
+                float posX1 = this.gameObject.transform.position.x;
+                float posY1 = this.gameObject.transform.position.y;
+                Instantiate(Effect[1], new Vector3(posX1, posY1 + 1.5f, 0), Quaternion.identity);
+                Invoke("afterflash", 0.4f);
+                break;
+            case 1:
+
                 break;
         }
         
     }
-
+    public void afterflash()
+    {
+        //sr.color = new Color32(255, 255, 255, 255);
+        gameObject.SetActive(true);
+        rb.gravityScale = 9.8f;
+    }
 
     // 인자로 넘어온 skill 정보에 따라 애니메이션을 플레이하고
     // damage 정보 만큼 피해를 입힙니다.
