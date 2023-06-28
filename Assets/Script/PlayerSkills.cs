@@ -13,7 +13,7 @@ public class PlayerSkills : MonoBehaviour
     public Image[] imgIcon;
     public Image[] imgCool;
 
-
+    public GameObject IPAD;
     Animator anim;
     Rigidbody2D rb;
     SpriteRenderer sr;
@@ -54,15 +54,29 @@ public class PlayerSkills : MonoBehaviour
     public void SkillActive(int i)
     {
         //if (imgCool[i].fillAmount > 0) return;
-
+        float posX = this.gameObject.transform.position.x;
+        float posY = this.gameObject.transform.position.y;
         switch (i)
         {
             case 0: //Flash
-                float posX = this.gameObject.transform.position.x;
-                float posY = this.gameObject.transform.position.y;
                 Instantiate(Effect[0], new Vector3(posX, posY, 0), Quaternion.identity);
+                //if (Input.GetKey(KeyCode.RightArrow))
+                //    rb.AddForce(new Vector2(posX + 15, posY + 0.2f));
+                //else if (Input.GetKey(KeyCode.UpArrow))
+                //    rb.AddForce(new Vector2(posX, posY + 10f));
+                //if (Input.GetKey(KeyCode.LeftArrow))
+                //    rb.AddForce(new Vector2(posX - 15, posY + 0.2f));
+                //else if (Input.GetKey(KeyCode.UpArrow))
+                //    rb.AddForce(new Vector2(posX, posY + 10f));
 
-                gameObject.transform.position += new Vector3(posX+10, posY+0.2f, 0);
+                if (Input.GetKey(KeyCode.RightArrow))
+                    gameObject.transform.position =(new Vector3(posX + 5, posY + 0.2f, 0));
+                else if (Input.GetKey(KeyCode.UpArrow))
+                    gameObject.transform.position = (new Vector3(posX, posY + 3.2f, 0));
+                if (Input.GetKey(KeyCode.LeftArrow))
+                    gameObject.transform.position = (new Vector3(posX - 5, posY + 0.2f, 0));
+                else if (Input.GetKey(KeyCode.UpArrow))
+                    gameObject.transform.position = (new Vector3(posX, posY + 3.2f, 0));
                 rb.gravityScale = 0;
                 sr.color = new Color32(255, 255, 255, 0);
                 //gameObject.SetActive(false);
@@ -73,7 +87,15 @@ public class PlayerSkills : MonoBehaviour
                 //StopCoroutine("aftFlash");
                 break;
             case 1:
-
+                Instantiate(Effect[2], new Vector3(posX + 1, posY+0.2f, 0), Quaternion.identity);
+                break;
+            case 2:
+                Instantiate(Effect[3], new Vector3(posX + 8, posY + 0.2f, 0), Quaternion.identity);
+                break;
+            case 3:
+                IPAD.SetActive(true);
+                StartCoroutine(aftFlash());
+                StopCoroutine(aftFlash());
                 break;
         }
         
@@ -86,10 +108,11 @@ public class PlayerSkills : MonoBehaviour
     }
     IEnumerator aftFlash()
     {
-        yield return new WaitForSeconds(0.4f);
-        gameObject.SetActive(true);
-        rb.gravityScale = 9.8f;
+        yield return new WaitForSeconds(2.0f);
+        IPAD.SetActive(false);
+        yield return new WaitForSeconds(1f);
     }
+
 
     // 인자로 넘어온 skill 정보에 따라 애니메이션을 플레이하고
     // damage 정보 만큼 피해를 입힙니다.
