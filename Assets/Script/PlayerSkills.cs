@@ -34,10 +34,9 @@ public class PlayerSkills : MonoBehaviour
     }
     public void getKey()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKey(KeyCode.Q))
         {
             OnClicked(0);
-            //Flash();
         }
         if (Input.GetKey(KeyCode.W))
         {
@@ -65,12 +64,13 @@ public class PlayerSkills : MonoBehaviour
 
                 gameObject.transform.position += new Vector3(posX+10, posY+0.2f, 0);
                 rb.gravityScale = 0;
-                //sr.color = new Color32(255, 255, 255, 0);
-                gameObject.SetActive(false);
+                sr.color = new Color32(255, 255, 255, 0);
+                //gameObject.SetActive(false);
                 float posX1 = this.gameObject.transform.position.x;
                 float posY1 = this.gameObject.transform.position.y;
                 Instantiate(Effect[1], new Vector3(posX1, posY1 + 1.5f, 0), Quaternion.identity);
-                Invoke("afterflash", 0.4f);
+                Invoke("afterflash", 0.4f); //StartCoroutine("aftFlash");
+                //StopCoroutine("aftFlash");
                 break;
             case 1:
 
@@ -80,7 +80,13 @@ public class PlayerSkills : MonoBehaviour
     }
     public void afterflash()
     {
-        //sr.color = new Color32(255, 255, 255, 255);
+        sr.color = new Color32(255, 255, 255, 255);
+        //gameObject.SetActive(true);
+        rb.gravityScale = 9.8f;
+    }
+    IEnumerator aftFlash()
+    {
+        yield return new WaitForSeconds(0.4f);
         gameObject.SetActive(true);
         rb.gravityScale = 9.8f;
     }

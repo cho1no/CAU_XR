@@ -14,4 +14,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   value: 25
   cool: 0.5
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: a3f27393989ed5f46b133f58ecc6caca, type: 3}
