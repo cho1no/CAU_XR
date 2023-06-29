@@ -9,6 +9,8 @@ public class BossPattern : MonoBehaviour
     private GameObject[] prefab;
     //ßbool canAttack;
     float posX, posY;
+    //bool isLeft, isRight;
+    //SpriteRenderer spriteRenderer;
     private bool canAttack = true;
     void Start()
     {
@@ -25,7 +27,7 @@ public class BossPattern : MonoBehaviour
         if (canAttack)
         {
             int pattern = Random.Range(0, 100); // 1 또는 2 중에서 랜덤으로 패턴 선택
-            
+
             switch (pattern)
             {
                 case int n when (0 <= pattern && pattern < 40):
@@ -51,7 +53,7 @@ public class BossPattern : MonoBehaviour
             }
 
             canAttack = false;
-            Invoke("ResetAttack", 2f);
+            Invoke("ResetAttack", 5f);
         }
     }
     

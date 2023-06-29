@@ -5,7 +5,7 @@ using UnityEngine;
 public class BossController : MonoBehaviour
 {
     public float moveSpeed = 3f;
-    public float detectionRange = 15f;
+    private float detectionRange = 15f;
 
     private Transform playerTransform;
     private Rigidbody2D rb;
@@ -31,6 +31,10 @@ public class BossController : MonoBehaviour
                 // 플레이어를 추적하여 이동
                 Vector2 direction = new Vector2(a, 0);
                 if (a < 0)
+                {
+                    spriteRenderer.flipX = false;
+                }
+                else
                 {
                     spriteRenderer.flipX = true;
                 }
