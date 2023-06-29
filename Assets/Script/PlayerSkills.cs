@@ -14,6 +14,8 @@ public class PlayerSkills : MonoBehaviour
     public Image[] imgCool;
 
     public GameObject IPAD;
+
+    bool isLeft; bool isRight;
     Animator anim;
     Rigidbody2D rb;
     SpriteRenderer sr;
@@ -56,6 +58,13 @@ public class PlayerSkills : MonoBehaviour
         //if (imgCool[i].fillAmount > 0) return;
         float posX = this.gameObject.transform.position.x;
         float posY = this.gameObject.transform.position.y;
+        if (Input.GetKey(KeyCode.RightArrow)) { 
+            isRight = true; isLeft = false;
+        }
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            isLeft = true; isRight = false;
+        }
         switch (i)
         {
             case 0: //Flash
