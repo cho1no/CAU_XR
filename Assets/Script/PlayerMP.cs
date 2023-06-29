@@ -16,6 +16,7 @@ public class PlayerMP : MonoBehaviour
     {
         Instance = this;
         playerMp0 = MaxMp[0];
+        playerMp1 = MaxMp[1];
     }
     private void Update()
     {

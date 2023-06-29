@@ -90,7 +90,7 @@ public class PlayerSkills : MonoBehaviour
                 Instantiate(Effect[2], new Vector3(posX + 1, posY+0.2f, 0), Quaternion.identity);
                 break;
             case 2:
-                Instantiate(Effect[3], new Vector3(posX + 8, posY + 0.2f, 0), Quaternion.identity);
+                Instantiate(Effect[3], new Vector3(posX + 8, posY + 4f, 0), Quaternion.identity);
                 break;
             case 3:
                 IPAD.SetActive(true);

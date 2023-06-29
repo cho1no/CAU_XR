@@ -7,7 +7,7 @@ public class Thunder : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Invoke("destroyThunder", 1.2f);
+        Invoke("destroyThunder", 0.8f);
     }
     void destroyThunder()
     {

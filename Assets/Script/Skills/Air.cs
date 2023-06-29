@@ -26,5 +26,6 @@ public class Air : MonoBehaviour
     void Update()
     {
         transform.Translate(new Vector3(5f*Time.deltaTime, 0, 0));
+        transform.localScale += (new Vector3(1f * Time.deltaTime, 1f * Time.deltaTime, 0));
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 public class TutorialMovement : TutorialBase
 {
 	[SerializeField]
-	private	RectTransform	rectTransform;
+	private	GameObject	rectTransform;
 	[SerializeField]
 	private	Vector3			endPosition;
 	private	bool			isCompleted = false;
@@ -31,14 +31,14 @@ public class TutorialMovement : TutorialBase
 		float	current = 0;
 		float	percent = 0;
 		float	moveTime = 0.5f;
-		Vector3	start = rectTransform.anchoredPosition;
+		Vector3	start = rectTransform.transform.position;
 
 		while ( percent < 1 )
 		{
 			current += Time.deltaTime;
 			percent = current / moveTime;
 
-			rectTransform.anchoredPosition = Vector3.Lerp(start, endPosition, percent);
+			rectTransform.transform.position = Vector3.Lerp(start, endPosition, percent);
 
 			yield return null;
 		}
