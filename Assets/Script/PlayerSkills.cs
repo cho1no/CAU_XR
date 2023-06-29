@@ -14,7 +14,7 @@ public class PlayerSkills : MonoBehaviour
     public Image[] imgCool;
 
     public GameObject IPAD;
-
+    public Image Ipad;
     bool isLeft; bool isRight;
     Animator anim;
     Rigidbody2D rb;
@@ -102,7 +102,7 @@ public class PlayerSkills : MonoBehaviour
                 Instantiate(Effect[3], new Vector3(posX + 8, posY + 4f, 0), Quaternion.identity);
                 break;
             case 3:
-                IPAD.SetActive(true);
+                IPAD.SetActive(true); Ipad.gameObject.SetActive(true); //Time.timeScale = 0;
                 StartCoroutine(aftFlash());
                 StopCoroutine(aftFlash());
                 break;
@@ -118,7 +118,7 @@ public class PlayerSkills : MonoBehaviour
     IEnumerator aftFlash()
     {
         yield return new WaitForSeconds(2.0f);
-        IPAD.SetActive(false);
+        IPAD.SetActive(false); Ipad.gameObject.SetActive(false); //Time.timeScale = 1;
         yield return new WaitForSeconds(1f);
     }
 

@@ -8,13 +8,14 @@ public class BossPattern : MonoBehaviour
     [SerializeField]
     private GameObject[] prefab;
     //ßbool canAttack;
+    BossController controller;
     float posX, posY;
     //bool isLeft, isRight;
     //SpriteRenderer spriteRenderer;
     private bool canAttack = true;
     void Start()
     {
-        
+        controller = GetComponent<BossController>();
     }
     void Awake(){
         ani = GetComponent<Animator>();
@@ -27,7 +28,7 @@ public class BossPattern : MonoBehaviour
         if (canAttack)
         {
             int pattern = Random.Range(0, 100); // 1 또는 2 중에서 랜덤으로 패턴 선택
-
+            controller.isMove = false;
             switch (pattern)
             {
                 case int n when (0 <= pattern && pattern < 40):
@@ -51,10 +52,11 @@ public class BossPattern : MonoBehaviour
                     break;
                 // 추가적인 패턴이 있다면 여기에 추가
             }
-
+            
             canAttack = false;
             Invoke("ResetAttack", 5f);
         }
+        controller.isMove = true;
     }
     
 
