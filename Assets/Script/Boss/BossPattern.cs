@@ -31,24 +31,25 @@ public class BossPattern : MonoBehaviour
             controller.isMove = false;
             switch (pattern)
             {
-                case int n when (0 <= pattern && pattern < 40):
+                case int n when (0 <= pattern && pattern < 30):
                     ani.SetTrigger("d_cleave");
                     //AttackPattern(pattern);
                     break;
-                case int n when (40 <= pattern && pattern < 60):
+                case int n when (30 <= pattern && pattern < 50):
                     ani.SetTrigger("d_smash");
                     //AttackPattern(pattern);
                     break;
-                case int n when (60 <= pattern && pattern < 70):
+                case int n when (50 <= pattern && pattern < 60):
                     ani.SetTrigger("d_fire_breath");
                     //AttackPattern(pattern);
                     break;
-                case int n when (70 <= pattern && pattern < 80):
+                case int n when (60 <= pattern && pattern < 61):
                     ani.SetTrigger("d_cast_spell");
+                    AttackPattern(80);
                     break;
-                case int n when (80 <= pattern && pattern < 90):
-                    break;
-                case int n when (90 <= pattern && pattern < 100):
+                case int n when (61 <= pattern && pattern < 100):
+                    ani.SetTrigger("d_smash");
+                    AttackPattern(95);
                     break;
                 // 추가적인 패턴이 있다면 여기에 추가
             }
@@ -64,22 +65,22 @@ public class BossPattern : MonoBehaviour
         switch (i)
         {
             case int n when (0 <= i && i < 40):
-                Instantiate(prefab[i], new Vector3(posX + 1, posY + 0.2f, 0), Quaternion.identity);
+                //Instantiate(prefab[i], new Vector3(posX - 1, posY, 0), Quaternion.identity);
                 break;
             case int n when (40 <= i && i < 60):
-                Instantiate(prefab[i], new Vector3(posX + 1, posY + 0.2f, 0), Quaternion.identity);
+                //Instantiate(prefab[i], new Vector3(posX - 1, posY, 0), Quaternion.identity);
                 break;
             case int n when (60 <= i && i < 70):
-                Instantiate(prefab[i], new Vector3(posX + 1, posY + 0.2f, 0), Quaternion.identity);
+                //Instantiate(prefab[i], new Vector3(posX - 1, posY, 0), Quaternion.identity);
                 break;
             case int n when (70 <= i && i < 80):
-                Instantiate(prefab[i], new Vector3(posX + 1, posY + 0.2f, 0), Quaternion.identity);
+                //Instantiate(prefab[i], new Vector3(posX - 1, posY, 0), Quaternion.identity);
                 break;
             case int n when (80 <= i && i < 90):
-                Instantiate(prefab[i], new Vector3(posX + 1, posY + 0.2f, 0), Quaternion.identity);
+                Instantiate(prefab[0], new Vector3(posX - 1, posY -3, 0), Quaternion.identity);
                 break;
             case int n when (90 <= i && i < 100):
-                Instantiate(prefab[i], new Vector3(posX + 1, posY + 0.2f, 0), Quaternion.identity);
+                Instantiate(prefab[1], new Vector3(posX - 1, posY - 2, 0), Quaternion.identity);
                 break;
                 // 추가적인 패턴이 있다면 여기에 추가
         }
