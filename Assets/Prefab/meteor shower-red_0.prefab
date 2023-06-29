@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7467257909984967566}
   - component: {fileID: 274902794019730297}
   - component: {fileID: 4314823856070661496}
+  - component: {fileID: 8153299137351101563}
   m_Layer: 0
   m_Name: meteor shower-red_0
   m_TagString: Untagged
@@ -152,3 +153,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.39, y: 0.24440491}
   m_EdgeRadius: 0
+--- !u!114 &8153299137351101563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4247523046239123556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 519837142ac75114884f11c7defec72b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
