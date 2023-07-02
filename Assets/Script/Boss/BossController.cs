@@ -26,7 +26,6 @@ public class BossController : MonoBehaviour
     {
         if (isMove) ani.SetBool("d_walk", true);
         if (!isMove) ani.SetBool("d_walk", false);
-        if (!isMove) Debug.Log("d");
         if (playerTransform != null)
         {
             
@@ -62,6 +61,22 @@ public class BossController : MonoBehaviour
         if (collision.gameObject.tag.Equals("WaterShot"))
         {
             BossGuard.Instance.SetGuard(-1);
+            if (BossGuard.Instance.bossGuard > 0)
+                ani.SetTrigger("boss_hit");
+        }
+        if (collision.gameObject.tag.Equals("WaterShot") || collision.gameObject.tag.Equals("NormalShot"))
+        {
+            if (BossGuard.Instance.bossGuard < 1)
+            {
+                BossHp.Instance.SetHp(-30);
+            }
+        }
+        if (collision.gameObject.tag.Equals("Thunder"))
+        {
+            if (BossGuard.Instance.bossGuard < 1)
+            {
+                BossHp.Instance.SetHp(-50);
+            }
         }
     }
 }
