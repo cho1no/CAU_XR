@@ -8,6 +8,12 @@ TagManager:
   - Enemy
   - Water
   - WaterShot
+  - Thunder
+  - Boss_Swing
+  - Boss_Shot
+  - Boss_Meteor
+  - Boss_Jump
+  - NormalShot
   layers:
   - Default
   - TransparentFX
