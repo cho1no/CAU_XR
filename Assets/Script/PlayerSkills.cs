@@ -7,6 +7,7 @@ using UnityEngine.UI;
 public class PlayerSkills : MonoBehaviour
 {
     public GameObject[] Effect;
+    GameObject nul = null;
     public SOSkill[] skill;
     
     //public GameObject[] skills;
@@ -15,7 +16,7 @@ public class PlayerSkills : MonoBehaviour
 
     public GameObject IPAD;
     public Image Ipad;
-    bool isLeft; bool isRight;
+    public bool isLeft; public bool isRight; bool isWater;
     Animator anim;
     Rigidbody2D rb;
     SpriteRenderer sr;
@@ -32,6 +33,14 @@ public class PlayerSkills : MonoBehaviour
     }
     private void Update()
     {
+        if (Input.GetKey(KeyCode.RightArrow))
+        {
+            isRight = true; isLeft = false;
+        }
+        if (Input.GetKey(KeyCode.LeftArrow))
+        {
+            isLeft = true; isRight = false;
+        }
         getKey();
     }
     public void getKey()
@@ -58,13 +67,7 @@ public class PlayerSkills : MonoBehaviour
         //if (imgCool[i].fillAmount > 0) return;
         float posX = this.gameObject.transform.position.x;
         float posY = this.gameObject.transform.position.y;
-        if (Input.GetKey(KeyCode.RightArrow)) { 
-            isRight = true; isLeft = false;
-        }
-        if (Input.GetKey(KeyCode.LeftArrow))
-        {
-            isLeft = true; isRight = false;
-        }
+
         switch (i)
         {
             case 0: //Flash
@@ -96,10 +99,40 @@ public class PlayerSkills : MonoBehaviour
                 //StopCoroutine("aftFlash");
                 break;
             case 1:
-                Instantiate(Effect[2], new Vector3(posX + 1, posY+0.2f, 0), Quaternion.identity);
+                if (!isWater)
+                {
+                    if (isRight)
+                    {
+                        Effect[2].GetComponent<Air>().dir = 1;
+                        Instantiate(Effect[2], new Vector3(posX + 1, posY + 0.4f, 0), Quaternion.identity);
+                        
+                    }
+                    if (isLeft)
+                    {
+                        Effect[2].GetComponent<Air>().dir = -1;
+                        Instantiate(Effect[2], new Vector3(posX - 1, posY + 0.4f, 0), Quaternion.identity);
+                        
+                    }
+                }
+                else
+                {
+                    if (isRight)
+                    {
+                        Effect[2].GetComponent<Air>().dir = 1;
+                        Instantiate(Effect[4], new Vector3(posX + 1, posY + 0.4f, 0), Quaternion.identity);
+                        
+                    }
+                    if (isLeft)
+                    {
+                        Effect[2].GetComponent<Air>().dir = -1;
+                        Instantiate(Effect[4], new Vector3(posX - 1, posY + 0.4f, 0), Quaternion.identity);
+                        
+                    }
+                }
                 break;
             case 2:
-                Instantiate(Effect[3], new Vector3(posX + 8, posY + 4f, 0), Quaternion.identity);
+                if (isRight) { Instantiate(Effect[3], new Vector3(posX + 8, posY + 2.3f, 0), Quaternion.identity); }
+                if (isLeft) { Instantiate(Effect[3], new Vector3(posX - 8, posY + 2.3f, 0), Quaternion.identity); }
                 break;
             case 3:
                 IPAD.SetActive(true); Ipad.gameObject.SetActive(true); //Time.timeScale = 0;
@@ -163,5 +196,20 @@ public class PlayerSkills : MonoBehaviour
             yield return null;
         }
     }
-
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag.Equals("Water"))
+        {
+            isWater = true;
+            Debug.Log("1");
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.tag.Equals("Water"))
+        {
+            isWater = false;
+            Debug.Log("3");
+        }
+    }
 }

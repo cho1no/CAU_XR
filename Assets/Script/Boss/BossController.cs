@@ -11,6 +11,7 @@ public class BossController : MonoBehaviour
     private Rigidbody2D rb;
     Animator ani;
     SpriteRenderer spriteRenderer;
+    BossGuard bG;
     public bool isMove;
     private void Start()
     {
@@ -18,13 +19,14 @@ public class BossController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         ani = GetComponent<Animator>();
+        //bG = GetComponent<BossGuard>();
     }
 
     private void Update()
     {
         if (isMove) ani.SetBool("d_walk", true);
         if (!isMove) ani.SetBool("d_walk", false);
-
+        if (!isMove) Debug.Log("d");
         if (playerTransform != null)
         {
             
@@ -53,6 +55,13 @@ public class BossController : MonoBehaviour
                 // 플레이어가 감지 범위를 벗어날 경우 멈춤
                 rb.velocity = Vector2.zero;
             }
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag.Equals("WaterShot"))
+        {
+            BossGuard.Instance.SetGuard(-1);
         }
     }
 }

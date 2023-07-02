@@ -7,6 +7,7 @@ TagManager:
   - Ground
   - Enemy
   - Water
+  - WaterShot
   layers:
   - Default
   - TransparentFX

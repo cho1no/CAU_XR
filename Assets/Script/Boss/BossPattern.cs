@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting.Antlr3.Runtime.Tree;
 using UnityEngine;
 
 public class BossPattern : MonoBehaviour
@@ -55,11 +56,14 @@ public class BossPattern : MonoBehaviour
             }
             
             canAttack = false;
+            Invoke("aMove", 4);
             Invoke("ResetAttack", 5f);
         }
+    }
+    private void aMove()
+    {
         controller.isMove = true;
     }
-    
 
     public void AttackPattern(int i){
         switch (i)

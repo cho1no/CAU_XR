@@ -54,7 +54,7 @@ public class PlayerController : MonoBehaviour
                 {
                     isJump = true;
                     rigid.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-                    ani.SetTrigger("doJump");
+                    //ani.SetTrigger("doJump");
                 }
                 //transform.Translate(new Vector2(0, jumpForce * Time.deltaTime));
             }
