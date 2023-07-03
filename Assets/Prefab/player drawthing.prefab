@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7445970953857055164}
   - component: {fileID: 1982367051957375513}
   - component: {fileID: 3351856270530986497}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: player drawthing
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -2411,7 +2411,7 @@ GameObject:
   - component: {fileID: 992672537}
   - component: {fileID: 992672545}
   - component: {fileID: 992672544}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: demon_idle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

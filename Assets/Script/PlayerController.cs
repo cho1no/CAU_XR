@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag.Equals("Ground") || collision.gameObject.tag.Equals(""))
+        if (collision.gameObject.tag.Equals("Ground") || collision.gameObject.tag.Equals("Wall"))
         {
             isJump = false;
         }

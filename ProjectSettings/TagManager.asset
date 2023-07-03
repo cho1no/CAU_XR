@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Water
   - WaterShot
+  - Wall
   layers:
   - Default
   - TransparentFX
@@ -15,8 +16,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Wall
+  - Boss
   - 
   - 
   - 

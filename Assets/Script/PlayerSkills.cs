@@ -33,11 +33,11 @@ public class PlayerSkills : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetKey(KeyCode.RightArrow))
+        if (!sr.flipX)
         {
             isRight = true; isLeft = false;
         }
-        if (Input.GetKey(KeyCode.LeftArrow))
+        if (sr.flipX)
         {
             isLeft = true; isRight = false;
         }
