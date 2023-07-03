@@ -24,7 +24,6 @@ public class BossController : MonoBehaviour
 
     private void Update()
     {
-        if (BossHp.Instance.bossHp < 1){ ani.SetBool("isAlive", false); ani.SetTrigger("isDead"); }
         if (isMove) ani.SetBool("d_walk", true);
         if (!isMove) ani.SetBool("d_walk", false);
         if (playerTransform != null)
@@ -62,14 +61,6 @@ public class BossController : MonoBehaviour
         if (collision.gameObject.tag.Equals("WaterShot"))
         {
             BossGuard.Instance.SetGuard(-1);
-            if (BossGuard.Instance.bossGuard == 0)
-            {
-                if (BossHp.Instance.bossHp >= 150)
-                {
-                    ani.SetTrigger("isDead");
-                    ani.SetBool("isAlive", true);
-                }
-            }
             if (BossGuard.Instance.bossGuard > 0)
                 ani.SetTrigger("boss_hit");
         }
@@ -78,7 +69,6 @@ public class BossController : MonoBehaviour
             if (BossGuard.Instance.bossGuard < 1)
             {
                 BossHp.Instance.SetHp(-30);
-                ani.SetTrigger("boss_hit");
             }
         }
         if (collision.gameObject.tag.Equals("Thunder"))
@@ -86,7 +76,6 @@ public class BossController : MonoBehaviour
             if (BossGuard.Instance.bossGuard < 1)
             {
                 BossHp.Instance.SetHp(-50);
-                ani.SetTrigger("boss_hit");
             }
         }
     }

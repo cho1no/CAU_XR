@@ -73,21 +73,5 @@ public class PlayerController : MonoBehaviour
         {
             PlayerHp.Instance.SetHp(-50);
         }
-        if (collision.gameObject.tag.Equals("Boss_Swing"))
-        {
-            PlayerHp.Instance.SetHp(-10);
-        }
-        if (collision.gameObject.tag.Equals("Boss_Shot"))
-        {
-            PlayerHp.Instance.SetHp(-20);
-        }
-        if (collision.gameObject.tag.Equals("Boss_Meteor"))
-        {
-            PlayerHp.Instance.SetHp(-30);
-        }
-        if (collision.gameObject.tag.Equals("Boss_Jump"))
-        {
-            PlayerHp.Instance.SetHp(-20);
-        }
     }
 }

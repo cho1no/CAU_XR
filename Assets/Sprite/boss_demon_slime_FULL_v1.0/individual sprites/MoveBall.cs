@@ -5,7 +5,6 @@ using UnityEngine;
 public class MoveBall : MonoBehaviour
 {
     Animator ani;
-    public int position = 1;
     void Start()
     {
         ani = GetComponent<Animator>();
@@ -13,7 +12,7 @@ public class MoveBall : MonoBehaviour
     }
     void Update()
     {
-        transform.Translate(new Vector2(-5 * position * Time.deltaTime, 0));
+        transform.Translate(new Vector2(-5 * Time.deltaTime, 0));
     }
 
     void DestroyFX()
@@ -22,9 +21,6 @@ public class MoveBall : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag.Equals("Player")) { 
-            ani.SetTrigger("doBoom");
-            PlayerHp.Instance.SetHp(-30);
-        }
+        if (collision.gameObject.tag.Equals("Player")) { ani.SetTrigger("doBoom"); }
     }
 }
