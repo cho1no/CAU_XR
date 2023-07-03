@@ -5,7 +5,7 @@ using UnityEngine;
 public class BlockedObject : MonoBehaviour
 {
     Rigidbody2D rb;
-    bool ishit;
+    public bool ishit = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -15,10 +15,10 @@ public class BlockedObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (ishit)
-        {
-            transform.Rotate(0, 0, 10 * Time.deltaTime) ;
-        }
+        //if (ishit)
+        //{
+        //    transform.Rotate(0, 0, 10 * Time.deltaTime) ;
+        //}
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {

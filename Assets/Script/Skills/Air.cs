@@ -9,9 +9,9 @@ public class Air : MonoBehaviour
     float speed = 5;
     public float dir = 1;
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
-        skill = GameObject.FindWithTag("Player").GetComponent<PlayerSkills>();
+        //kill = GameObject.FindWithTag("Player").GetComponent<PlayerSkills>();
         posX = transform.position.x;
         posY = transform.position.y;
         Invoke("DestroyWind", 1.5f);
