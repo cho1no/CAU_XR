@@ -14,6 +14,7 @@ TagManager:
   - Boss_Meteor
   - Boss_Jump
   - Boss_Smash
+  - NormalShot
   layers:
   - Default
   - TransparentFX

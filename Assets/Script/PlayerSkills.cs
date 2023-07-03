@@ -84,11 +84,11 @@ public class PlayerSkills : MonoBehaviour
                 if (Input.GetKey(KeyCode.RightArrow))
                     gameObject.transform.position =(new Vector3(posX + 5, posY + 0.2f, 0));
                 else if (Input.GetKey(KeyCode.UpArrow))
-                    gameObject.transform.position = (new Vector3(posX, posY + 3.2f, 0));
+                    gameObject.transform.position = (new Vector3(posX, posY + 5.2f, 0));
                 if (Input.GetKey(KeyCode.LeftArrow))
                     gameObject.transform.position = (new Vector3(posX - 5, posY + 0.2f, 0));
                 else if (Input.GetKey(KeyCode.UpArrow))
-                    gameObject.transform.position = (new Vector3(posX, posY + 3.2f, 0));
+                    gameObject.transform.position = (new Vector3(posX, posY + 5.2f, 0));
                 rb.gravityScale = 0;
                 sr.color = new Color32(255, 255, 255, 0);
                 //gameObject.SetActive(false);
@@ -99,6 +99,7 @@ public class PlayerSkills : MonoBehaviour
                 //StopCoroutine("aftFlash");
                 break;
             case 1:
+                if (PlayerMP.Instance.playerMp0)
                 if (!isWater)
                 {
                     if (isRight)
