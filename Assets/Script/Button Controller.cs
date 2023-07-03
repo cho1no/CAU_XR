@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 public class ButtonController : MonoBehaviour
 {
     // Start is called before the first frame update
-   private void btClick()
+   public void btClick()
    {
        
        SceneManager.LoadScene("SampleScene");

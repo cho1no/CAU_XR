@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    float playerSpeed = 10;
-    float jumpForce = 30;
+    float playerSpeed = 6;
+    float jumpForce = 25;
     bool isJump;
     public bool IsMoved { set; get; } = false;
     Rigidbody2D rigid;
@@ -27,7 +27,7 @@ public class PlayerController : MonoBehaviour
         Jump();
     }
 
-    void Move() //ÇÃ·¹ÀÌ¾î ÀÌµ¿
+    void Move() //ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½Ìµï¿½
     {
 
             if (Input.GetKey(KeyCode.LeftArrow))
