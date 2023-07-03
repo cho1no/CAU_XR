@@ -8,22 +8,20 @@ public class NextScenesController : MonoBehaviour
 {
     public string Title;
 
-    private float timer;
+    //private float timer;
 
     // Start is called before the first frame update
     private void Start()
     {
-        timer = 0f;
+        Invoke("qwer", 8f);
     }
 
     // Update is called once per frame
     private void Update()
     {
-        timer += Time.deltaTime;
-
-        if(timer >= 8f)
-        {
-            SceneManager.LoadScene(Title);
-        }
+    }
+    public void qwer()
+    {
+        SceneManager.LoadScene(Title);
     }
 }
