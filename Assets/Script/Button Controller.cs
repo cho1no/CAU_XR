@@ -6,16 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class ButtonController : MonoBehaviour
 {
-    private Button button;
-
-    private void Start()
-    {
-        button = GetComponent<Button>();
-        button.onClick.AddListener(OnClick);
-    }
-
     // Start is called before the first frame update
-   private void OnClick()
+   private void btClick()
    {
        
        SceneManager.LoadScene("SampleScene");
