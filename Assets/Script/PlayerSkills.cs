@@ -20,8 +20,14 @@ public class PlayerSkills : MonoBehaviour
     Animator anim;
     Rigidbody2D rb;
     SpriteRenderer sr;
+
+    AudioSource audio;
+    public AudioClip flash_ad;
+    //public AudioClip shot_ad;
+    public AudioClip Thunder_ad;
     private void Start()
     {
+        audio = GetComponent<AudioSource>();
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
@@ -71,6 +77,8 @@ public class PlayerSkills : MonoBehaviour
         switch (i)
         {
             case 0: //Flash
+                audio.clip = flash_ad;
+                audio.Play();
                 Instantiate(Effect[0], new Vector3(posX, posY, 0), Quaternion.identity);
                 //if (Input.GetKey(KeyCode.RightArrow))
                 //    rb.AddForce(new Vector2(posX + 15, posY + 0.2f));
@@ -99,6 +107,8 @@ public class PlayerSkills : MonoBehaviour
                 //StopCoroutine("aftFlash");
                 break;
             case 1:
+                //audio.clip = flash_ad;
+                //audio.Play();
                 if (PlayerMP.Instance.playerMp0 > 0)
                 {
                     if (!isWater)
@@ -135,6 +145,8 @@ public class PlayerSkills : MonoBehaviour
                 }
                 break;
             case 2:
+                audio.clip = Thunder_ad;
+                audio.Play();
                 if (PlayerMP.Instance.playerMp1 > 0) { 
                     if (isRight) { Instantiate(Effect[3], new Vector3(posX + 8, posY + 2.3f, 0), Quaternion.identity); }
                     if (isLeft) { Instantiate(Effect[3], new Vector3(posX - 8, posY + 2.3f, 0), Quaternion.identity); }
