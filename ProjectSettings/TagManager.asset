@@ -15,6 +15,7 @@ TagManager:
   - Boss_Jump
   - Boss_Smash
   - NormalShot
+  - portal
   layers:
   - Default
   - TransparentFX
