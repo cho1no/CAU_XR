@@ -53,6 +53,8 @@ public class PlayerSkills : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Q))
         {
+            audio.clip = flash_ad;
+            audio.Play();
             OnClicked(0);
         }
         if (Input.GetKey(KeyCode.W))
@@ -61,6 +63,8 @@ public class PlayerSkills : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.E))
         {
+            audio.clip = Thunder_ad;
+            audio.Play();
             OnClicked(2);
         }
         if (Input.GetKey(KeyCode.R))
@@ -77,8 +81,7 @@ public class PlayerSkills : MonoBehaviour
         switch (i)
         {
             case 0: //Flash
-                audio.clip = flash_ad;
-                audio.Play();
+                
                 Instantiate(Effect[0], new Vector3(posX, posY, 0), Quaternion.identity);
                 //if (Input.GetKey(KeyCode.RightArrow))
                 //    rb.AddForce(new Vector2(posX + 15, posY + 0.2f));
@@ -145,8 +148,7 @@ public class PlayerSkills : MonoBehaviour
                 }
                 break;
             case 2:
-                audio.clip = Thunder_ad;
-                audio.Play();
+                
                 if (PlayerMP.Instance.playerMp1 > 0) { 
                     if (isRight) { Instantiate(Effect[3], new Vector3(posX + 8, posY + 2.3f, 0), Quaternion.identity); }
                     if (isLeft) { Instantiate(Effect[3], new Vector3(posX - 8, posY + 2.3f, 0), Quaternion.identity); }
