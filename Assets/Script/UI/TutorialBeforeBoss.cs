@@ -9,7 +9,14 @@ public class TutorialBeforeBoss : TutorialBase
     [SerializeField]
     public Transform[] triggerObject;
 
+
+    public GameObject Player;
+    public int X;
+    public int Y;
+
     public bool isTrigger { set; get; } = false;
+
+    public bool isIn { set; get; } = false;
 
     public override void Enter()
     {
@@ -35,14 +42,20 @@ public class TutorialBeforeBoss : TutorialBase
         // TutorialTrigger 오브젝트의 위치를 플레이어와 동일하게 설정 (Trigger 오브젝트와 충돌할 수 있도록)
         gameObject.transform.position = playerController.transform.position;
 
-        if (isTrigger == true)
+        if (isIn)
         {
             int a = Random.Range(0, 100);
             if (a < 20)
             {
                 BeforeBossBuff.Instance.SetBuff(+1);
             }
-            //controller.SetNextTutorial();
+            Player.transform.position = new Vector2(X, Y);
+            isIn = false;
+        }
+        if (isTrigger == true)
+        {
+
+            controller.SetNextTutorial();
         }
     }
 
@@ -61,9 +74,15 @@ public class TutorialBeforeBoss : TutorialBase
     {
         if (collision.transform.Equals(triggerObject))
         {
-            isTrigger = true;
-
-            collision.gameObject.SetActive(false);
+            if (BeforeBossBuff.Instance.bossBuff <= 5)
+            {
+                isTrigger = true;
+                collision.gameObject.SetActive(false);
+            }
+            if (BeforeBossBuff.Instance.bossBuff > 5)
+            {
+                isIn = true;
+            }
         }
     }
 }
