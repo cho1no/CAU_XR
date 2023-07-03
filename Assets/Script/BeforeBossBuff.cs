@@ -5,7 +5,8 @@ using UnityEngine;
 public class BeforeBossBuff : MonoBehaviour
 {
     public static BeforeBossBuff Instance;
-    public int bossBuff { get; private set; } = 0;
+    [SerializeField]
+    public int bossBuff { get; private set; }
     private void Awake()
     {
         Instance = this;

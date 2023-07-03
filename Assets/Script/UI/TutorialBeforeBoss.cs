@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class TutorialBeforeBoss : TutorialBase
 {
@@ -8,8 +10,10 @@ public class TutorialBeforeBoss : TutorialBase
     public PlayerController playerController;
     [SerializeField]
     public Transform[] triggerObject;
+    Transform triggerObject0, triggerObject1;
 
-
+    public Image img;
+    public Text txt;
     public GameObject Player;
     public int X;
     public int Y;
@@ -22,11 +26,14 @@ public class TutorialBeforeBoss : TutorialBase
     {
         // 플레이어 이동 가능
         playerController.IsMoved = true;
+        img.gameObject.SetActive(true);
+        txt.gameObject.SetActive(true);
         // Trigger 오브젝트 활성화
         for (int i = 0; i < triggerObject.Length; i++)
         {
             triggerObject[i].gameObject.SetActive(true);
         }
+        //triggerObject0 = triggerObject[0].transform; triggerObject1 = triggerObject[1].transform;
     }
 
     public override void Execute(TutorialController controller)
@@ -48,6 +55,8 @@ public class TutorialBeforeBoss : TutorialBase
             if (a < 20)
             {
                 BeforeBossBuff.Instance.SetBuff(+1);
+                txt.text = "+";
+                txt.text += BeforeBossBuff.Instance.bossBuff;
             }
             Player.transform.position = new Vector2(X, Y);
             isIn = false;
@@ -63,7 +72,9 @@ public class TutorialBeforeBoss : TutorialBase
     {
         // 플레이어 이동 불가능
         //playerController.IsMoved = false;
-        // Trigger 오브젝트 비활성화
+        //Trigger 오브젝트 비활성화
+        img.gameObject.SetActive(false);
+        txt.gameObject.SetActive(false);
         for (int i = 0; i < triggerObject.Length; i++)
         {
             triggerObject[i].gameObject.SetActive(false);
@@ -72,14 +83,15 @@ public class TutorialBeforeBoss : TutorialBase
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.transform.Equals(triggerObject))
+        if (collision.transform.Equals(triggerObject[0])|| collision.transform.Equals(triggerObject[1]))
         {
-            if (BeforeBossBuff.Instance.bossBuff <= 5)
+            Debug.Log("123");
+            if (BeforeBossBuff.Instance.bossBuff >= 5)
             {
                 isTrigger = true;
                 collision.gameObject.SetActive(false);
             }
-            if (BeforeBossBuff.Instance.bossBuff > 5)
+            if (BeforeBossBuff.Instance.bossBuff < 5)
             {
                 isIn = true;
             }
