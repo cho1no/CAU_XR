@@ -466,7 +466,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &47965039
 Transform:
   m_ObjectHideFlags: 0
@@ -626,52 +626,56 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogs:
   - speaker: 0
-    dialogue: "\uB108 \uB9DE\uC9C0? \uC0B4\uC544\uB0A8\uC740 \uB0B4 \uBD84\uC2E0..   "
+    dialogue: "\uB108 \uB9DE\uC9C0? \uC0B4\uC544\uB0A8\uC740 \uB0B4 \uBD84\uC2E0...   "
   - speaker: 1
     dialogue: "\uB9DE\uC544. \uB4DC\uB514\uC5B4 \uD658\uC0DD\uD588\uAD6C\uB098. \uC815\uB9D0
       \uBC18\uAC11\uC9C0\uB9CC\n\uC9C0\uAE08\uC740 \uC774\uB7F4 \uC2DC\uAC04\uC774
-      \uC544\uB2C8\uC57C.\n\uB108\uAC00 \uC804\uC0DD\uC5D0 \uC8FD\uC744 \uB54C \uD37C\uC84C\uB358
-      \uB3C4\uC220\uC758 \uAD6C\uC2AC\uC774 \uC804\uAD6D\uC73C\uB85C \uD37C\uC84C\uC5B4    "
+      \uC544\uB2C8\uC57C."
+  - speaker: 1
+    dialogue: "\uB108\uAC00 \uC804\uC0DD\uC5D0 \uC8FD\uC744 \uB54C \uD37C\uC84C\uB358
+      \uB3C4\uC220\uC758 \uAD6C\uC2AC\uC774 \uC804\uAD6D\uC73C\uB85C \uD37C\uC84C\uC5B4. "
   - speaker: 1
     dialogue: "\uC9C0\uAE08 \uADF8 \uAD6C\uC2AC\uC744 \uC694\uAD34\uB4E4\uC774 \uD761\uC218\uD574\uC11C
-      \uC0AC\uB78C\uB4E4\uC744 \uAD34\uB86D\uAC8C \uD558\uACE0 \uC788\uC5B4. \n\uC6B0\uC120
+      \uC0AC\uB78C\uB4E4\uC744 \uAD34\uB86D\uAC8C \uD558\uACE0 \uC788\uC5B4. \uC6B0\uC120
       \uC774\uAC78 \uBC1B\uC544.  "
   - speaker: 1
     dialogue: "\uBC14\uB78C\uC744 \uC774\uC6A9\uD55C \uAE30\uC220\uC744 '\uC190\uD48D\uAE30'\uC5D0
       \uB123\uC5B4\uB1A8\uC5B4.\n\uB4E4\uACE0 \uB2E4\uB2D0 \uB54C \uC0AC\uB78C\uB4E4
       \uB208\uC5D0 \uB744\uC9C0 \uC54A\uC744\uAC70\uC57C.\nW \uBC84\uD2BC\uC744 \uB204\uB974\uBA74
       \uAC15\uB825\uD55C \uD68C\uC624\uB9AC\uAC00 \uB098\uAC00\uB2C8\uAE4C \uC870\uC2EC\uD574.   "
-  - speaker: 1
+  - speaker: 0
     dialogue: "\uC54C\uC558\uC5B4.   "
-  - speaker: 1
+  - speaker: 0
     dialogue: "\uADFC\uB370 \uC544\uAE4C \uB3C4\uB9DD\uAC04 \uADF8 \uC0AC\uB78C\uC740
       \uBB50\uC57C?   "
   - speaker: 1
-    dialogue: "\uADF8\uB798.  "
-  - speaker: 1
     dialogue: "\uADF8 \uC0AC\uB78C\uB3C4 \uB124 \uAD6C\uC2AC\uC744 \uAC16\uACE0 \uC788\uB294
-      \uC694\uAD34\uB4E4 \uC911 \uD558\uB098\uC57C.\n\uB4A4\uB97C \uBC1F\uB2E4\uAC00
-      \uB4E4\uCF1C \uC704\uD5D8\uD588\uB358 \uC0C1\uD669\uC774\uC5C8\uC5B4.\n\uC704\uCE58\uB97C
-      \uB4E4\uD0A8 \uC694\uAD34\uAC00 \uBB34\uC2A8\uC9D3\uC744 \uD560\uC9C0 \uBAA8\uB974\uB2C8\uAE4C
-      \uC5BC\uB978 \uB530\uB77C\uAC00\uBCF4\uC790.   "
+      \uC694\uAD34\uB4E4 \uC911 \uD558\uB098\uC57C. "
   - speaker: 1
+    dialogue: "\uB4A4\uB97C \uBC1F\uB2E4\uAC00 \uB4E4\uCF1C \uC704\uD5D8\uD588\uB358
+      \uC0C1\uD669\uC774\uC5C8\uC5B4.\n\uC704\uCE58\uB97C \uB4E4\uD0A8 \uC694\uAD34\uAC00
+      \uBB34\uC2A8\uC9D3\uC744 \uD560\uC9C0 \uBAA8\uB974\uB2C8\uAE4C \uC5BC\uB978
+      \uB530\uB77C\uAC00\uBCF4\uC790.   "
+  - speaker: 0
     dialogue: "\uADF8\uB798.  "
   imageDialogs:
+  - {fileID: 1680740220}
   - {fileID: 630746855}
+  - {fileID: 78905943}
   - {fileID: 603873025}
-  - {fileID: 603873025}
-  - {fileID: 603873025}
-  - {fileID: 630746855}
-  - {fileID: 630746855}
-  - {fileID: 603873025}
-  - {fileID: 630746855}
   textNames:
+  - {fileID: 1335066870}
+  - {fileID: 1335066870}
   - {fileID: 1335066870}
   - {fileID: 1335066870}
   textDialogues:
   - {fileID: 1197593236}
   - {fileID: 1197593236}
+  - {fileID: 1197593236}
+  - {fileID: 1197593236}
   objectArrows:
+  - {fileID: 2003685083}
+  - {fileID: 2003685083}
   - {fileID: 2003685083}
   - {fileID: 2003685083}
   typingSpeed: 0
@@ -1735,15 +1739,13 @@ MonoBehaviour:
   - speaker: 0
     dialogue: "\uB0B4\uAC00...\uD64D\uAE38\uB3D9...? "
   - speaker: 0
-    dialogue: ....
+    dialogue: '... '
   imageDialogs:
   - {fileID: 1680740220}
-  - {fileID: 1680740220}
-  - {fileID: 1680740220}
-  - {fileID: 1680740220}
-  - {fileID: 1680740220}
+  - {fileID: 630746855}
+  - {fileID: 78905943}
+  - {fileID: 603873025}
   textNames:
-  - {fileID: 1335066870}
   - {fileID: 1335066870}
   - {fileID: 1335066870}
   - {fileID: 1335066870}
@@ -1753,9 +1755,7 @@ MonoBehaviour:
   - {fileID: 1197593236}
   - {fileID: 1197593236}
   - {fileID: 1197593236}
-  - {fileID: 1197593236}
   objectArrows:
-  - {fileID: 2003685083}
   - {fileID: 2003685083}
   - {fileID: 2003685083}
   - {fileID: 2003685083}
@@ -2012,20 +2012,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogs:
   - speaker: 0
-    dialogue: "\uCD08\uCF54\uBC14\uB97C 10\uAC1C \uD68D\uB4DD\uD588\uB2E4.\n\uCD08\uCF54\uBC14\uB294
-      \uCCB4\uB825\uC744 25 \uC62C\uB824\uC8FC\uB294 \uC544\uC774\uD15C\uC774\uB2E4."
+    dialogue: "\uC5D0\uB108\uC9C0 \uB4DC\uB9C1\uD06C\uB97C 10\uAC1C \uD68D\uB4DD\uD588\uB2E4. "
   - speaker: 0
-    dialogue: "\uC640! \uCD08\uCF54\uBC14\uB2E4~!~@"
+    dialogue: "\uC5D0\uB108\uC9C0 \uB4DC\uB9C1\uD06C\uB294 \uCCB4\uB825\uC744 25
+      \uC62C\uB824\uC8FC\uB294 \uC544\uC774\uD15C\uC774\uB2E4. "
+  - speaker: 0
+    dialogue: "\uC640! \uC5D0\uB108\uC9C0 \uB4DC\uB9C1\uD06C\uB2E4~!~@ "
   imageDialogs:
   - {fileID: 1680740220}
-  - {fileID: 1680740220}
+  - {fileID: 630746855}
+  - {fileID: 78905943}
+  - {fileID: 603873025}
   textNames:
+  - {fileID: 1335066870}
+  - {fileID: 1335066870}
   - {fileID: 1335066870}
   - {fileID: 1335066870}
   textDialogues:
   - {fileID: 1197593236}
   - {fileID: 1197593236}
+  - {fileID: 1197593236}
+  - {fileID: 1197593236}
   objectArrows:
+  - {fileID: 2003685083}
+  - {fileID: 2003685083}
   - {fileID: 2003685083}
   - {fileID: 2003685083}
   typingSpeed: 0
@@ -2408,8 +2418,8 @@ GameObject:
   m_Component:
   - component: {fileID: 367551572}
   - component: {fileID: 367551571}
-  - component: {fileID: 367551573}
   - component: {fileID: 367551576}
+  - component: {fileID: 367551573}
   - component: {fileID: 367551575}
   - component: {fileID: 367551574}
   m_Layer: 0
@@ -3158,7 +3168,7 @@ GameObject:
   - component: {fileID: 508469976}
   m_Layer: 0
   m_Name: Char
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3640,7 +3650,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 539531250}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 176.91, y: 0.93, z: 0}
+  m_LocalPosition: {x: 171.6, y: 0.93, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -6075,27 +6085,27 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogs:
   - speaker: 0
-    dialogue: "\uD639\uC2DC\u2026 \uBB34\uC2A8 \uC77C \uC788\uC73C\uC138\uC694?\r\n"
+    dialogue: "\uD639\uC2DC\u2026 \uBB34\uC2A8 \uC77C \uC788\uC73C\uC138\uC694? \r\n"
   - speaker: 1
     dialogue: "\uC800\uD76C \uC9D1 \uACE0\uC591\uC774\uAC00 \uC774 \uC9D1 \uC9C0\uBD95
-      \uC704\uC5D0 \uC62C\uB77C\uAC00\uC11C \uB0B4\uB824\uC624\uC9C8 \uC54A\uC544\uC694\u315C\u315C
-      \n\uD639\uC2DC \uAC00\uB2A5\uD558\uC2DC\uBA74 \uC9C0\uBD95 \uC704\uC5D0 \uC62C\uB77C\uAC00\uC11C
-      \uACE0\uC591\uC774\uB97C \uB370\uB824\uC640\uC8FC\uC2E4 \uC218 \uC788\uC73C\uC2E0\uAC00\uC694?\r\n"
+      \uC704\uC5D0 \uC62C\uB77C\uAC00\uC11C \uB0B4\uB824\uC624\uC9C8 \uC54A\uC544\uC694.
+      \u315C\u315C \n\uD639\uC2DC \uAC00\uB2A5\uD558\uC2DC\uBA74 \uC9C0\uBD95 \uC704\uC5D0
+      \uC62C\uB77C\uAC00\uC11C \uACE0\uC591\uC774\uB97C \uB370\uB824\uC640\uC8FC\uC2E4
+      \uC218 \uC788\uC73C\uC2E0\uAC00\uC694? \r\n"
   - speaker: 0
-    dialogue: "\uC9C0\uBD95 \uC704\uC5D0\uC694? \uBABB\uC62C\uB77C\uAC08 \uAC83 \uAC19\uC740\uB370\u2026"
+    dialogue: "\uC9C0\uBD95 \uC704\uC5D0\uC694? \uBABB\uC62C\uB77C\uAC08 \uAC83 \uAC19\uC740\uB370\u2026 "
   - speaker: 1
     dialogue: "\uC544 \uB204\uAD70\uAC00 \uC9C0\uBD95 \uC704\uB85C \uD55C\uBC88\uC5D0
-      \uC62C\uB77C\uAC08 \uC218 \uC788\uB2E4\uBA74 \uC88B\uC744\uD150\uB370\u2026\r\n"
+      \uC62C\uB77C\uAC08 \uC218 \uC788\uB2E4\uBA74 \uC88B\uC744\uD150\uB370\u2026
+      \r\n"
   - speaker: 0
-    dialogue: "(\uD55C \uBC88\uC5D0\u2026?)"
+    dialogue: "(\uD55C \uBC88\uC5D0\u2026?) "
   imageDialogs:
   - {fileID: 1680740220}
-  - {fileID: 1680740220}
-  - {fileID: 1680740220}
-  - {fileID: 1680740220}
-  - {fileID: 1680740220}
+  - {fileID: 630746855}
+  - {fileID: 78905943}
+  - {fileID: 603873025}
   textNames:
-  - {fileID: 1335066870}
   - {fileID: 1335066870}
   - {fileID: 1335066870}
   - {fileID: 1335066870}
@@ -6105,9 +6115,7 @@ MonoBehaviour:
   - {fileID: 1197593236}
   - {fileID: 1197593236}
   - {fileID: 1197593236}
-  - {fileID: 1197593236}
   objectArrows:
-  - {fileID: 2003685083}
   - {fileID: 2003685083}
   - {fileID: 2003685083}
   - {fileID: 2003685083}
@@ -6929,20 +6937,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogs:
+  - speaker: 2
+    dialogue: "\uC9C4\uC9DC.. \uD64D\uAE38\uB3D9? "
   - speaker: 0
-    dialogue: "\uC9C4\uC9DC.. \uD64D\uAE38\uB3D9?"
-  - speaker: 1
-    dialogue: "(\uC4F0\uB7EC\uC9C4 \uBD84\uC2E0\uC744 \uBD80\uCD95\uD574\uC8FC\uC790)"
+    dialogue: "(\uC4F0\uB7EC\uC9C4 \uBD84\uC2E0\uC744 \uBD80\uCD95\uD574\uC8FC\uC790) "
   imageDialogs:
   - {fileID: 1680740220}
-  - {fileID: 1680740220}
+  - {fileID: 630746855}
+  - {fileID: 78905943}
+  - {fileID: 603873025}
   textNames:
+  - {fileID: 1335066870}
+  - {fileID: 1335066870}
   - {fileID: 1335066870}
   - {fileID: 1335066870}
   textDialogues:
   - {fileID: 1197593236}
   - {fileID: 1197593236}
+  - {fileID: 1197593236}
+  - {fileID: 1197593236}
   objectArrows:
+  - {fileID: 2003685083}
+  - {fileID: 2003685083}
   - {fileID: 2003685083}
   - {fileID: 2003685083}
   typingSpeed: 0
@@ -7174,16 +7190,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogs:
-  - speaker: 3
-    dialogue: "\uD53C\uACE4\uD558\uB2E4.. \uBE68\uB9AC \uC9D1\uC73C\uB85C \uB4E4\uC5B4\uAC00\uC790.."
+  - speaker: 0
+    dialogue: "\uD53C\uACE4\uD558\uB2E4... \uBE68\uB9AC \uC9D1\uC73C\uB85C \uB4E4\uC5B4\uAC00\uC790... "
   imageDialogs:
   - {fileID: 1680740220}
-  - {fileID: 1680740220}
-  - {fileID: 1680740220}
-  - {fileID: 1680740220}
-  - {fileID: 1680740220}
+  - {fileID: 630746855}
+  - {fileID: 78905943}
+  - {fileID: 603873025}
   textNames:
-  - {fileID: 1335066870}
   - {fileID: 1335066870}
   - {fileID: 1335066870}
   - {fileID: 1335066870}
@@ -7193,9 +7207,7 @@ MonoBehaviour:
   - {fileID: 1197593236}
   - {fileID: 1197593236}
   - {fileID: 1197593236}
-  - {fileID: 1197593236}
   objectArrows:
-  - {fileID: 2003685083}
   - {fileID: 2003685083}
   - {fileID: 2003685083}
   - {fileID: 2003685083}
@@ -8667,7 +8679,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1083003130936670883, guid: 4aea815ccd2582d4780261baf5389c61, type: 3}
       propertyPath: m_Name
-      value: Portal
+      value: Portal123
       objectReference: {fileID: 0}
     - target: {fileID: 8027976994950235895, guid: 4aea815ccd2582d4780261baf5389c61, type: 3}
       propertyPath: m_RootOrder
@@ -9381,17 +9393,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogs:
   - speaker: 0
-    dialogue: "(\uC800 \uC544\uC6B0\uB77C\uB294 \uBB50\uC9C0\u2026? \uB530\uB77C\uAC00\uBCF4\uC790)"
+    dialogue: "(\uC800 \uC544\uC6B0\uB77C\uB294 \uBB50\uC9C0\u2026? \uB530\uB77C\uAC00\uBCF4\uC790) "
   imageDialogs:
   - {fileID: 1680740220}
-  - {fileID: 1680740220}
+  - {fileID: 630746855}
+  - {fileID: 78905943}
+  - {fileID: 603873025}
   textNames:
+  - {fileID: 1335066870}
+  - {fileID: 1335066870}
   - {fileID: 1335066870}
   - {fileID: 1335066870}
   textDialogues:
   - {fileID: 1197593236}
   - {fileID: 1197593236}
+  - {fileID: 1197593236}
+  - {fileID: 1197593236}
   objectArrows:
+  - {fileID: 2003685083}
+  - {fileID: 2003685083}
   - {fileID: 2003685083}
   - {fileID: 2003685083}
   typingSpeed: 0
@@ -9579,18 +9599,28 @@ MonoBehaviour:
   dialogs:
   - speaker: 1
     dialogue: "\uBC14\uB9AC\uCF00\uC774\uB4DC \uB54C\uBB38\uC5D0 \uD558\uC218\uAD6C\uB85C
-      \uB4E4\uC5B4\uAC08 \uC218 \uC5C6\uACA0\uC5B4. \uBC14\uB78C\uC758 \uD798\uC73C\uB85C
-      \uBC14\uB9AC\uCF00\uC774\uB4DC\uB97C \uCE58\uC6CC\uBCF4\uC790\r\n  "
+      \uB4E4\uC5B4\uAC08 \uC218 \uC5C6\uACA0\uC5B4. "
+  - speaker: 1
+    dialogue: "\uBC14\uB78C\uC758 \uD798\uC73C\uB85C \uBC14\uB9AC\uCF00\uC774\uB4DC\uB97C
+      \uCE58\uC6CC\uBCF4\uC790. "
   imageDialogs:
+  - {fileID: 1680740220}
   - {fileID: 630746855}
+  - {fileID: 78905943}
   - {fileID: 603873025}
   textNames:
+  - {fileID: 1335066870}
+  - {fileID: 1335066870}
   - {fileID: 1335066870}
   - {fileID: 1335066870}
   textDialogues:
   - {fileID: 1197593236}
   - {fileID: 1197593236}
+  - {fileID: 1197593236}
+  - {fileID: 1197593236}
   objectArrows:
+  - {fileID: 2003685083}
+  - {fileID: 2003685083}
   - {fileID: 2003685083}
   - {fileID: 2003685083}
   typingSpeed: 0
@@ -10213,11 +10243,12 @@ MonoBehaviour:
   - {fileID: 1359319170}
   - {fileID: 859231958}
   - {fileID: 1421836290}
-  - {fileID: 367551576}
+  - {fileID: 0}
   - {fileID: 1765266132}
   - {fileID: 1941092630}
   - {fileID: 659604524}
   - {fileID: 40580428}
+  - {fileID: 1498080888}
   nextSceneName: Boss
 --- !u!4 &1512501738
 Transform:
@@ -11050,17 +11081,25 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogs:
   - speaker: 0
-    dialogue: "\uD559\uAD50\uB97C \uAC00\uBCFC\uAE4C?"
+    dialogue: "\uC544\uCE68\uC774\uB2E4 \uD559\uAD50\uB97C \uAC00\uBCFC\uAE4C? "
   imageDialogs:
   - {fileID: 1680740220}
-  - {fileID: 1680740220}
+  - {fileID: 630746855}
+  - {fileID: 78905943}
+  - {fileID: 603873025}
   textNames:
+  - {fileID: 1335066870}
+  - {fileID: 1335066870}
   - {fileID: 1335066870}
   - {fileID: 1335066870}
   textDialogues:
   - {fileID: 1197593236}
   - {fileID: 1197593236}
+  - {fileID: 1197593236}
+  - {fileID: 1197593236}
   objectArrows:
+  - {fileID: 2003685083}
+  - {fileID: 2003685083}
   - {fileID: 2003685083}
   - {fileID: 2003685083}
   typingSpeed: 0.1
@@ -11248,8 +11287,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1748970201}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 4.87, y: -3.8383722, z: 0.30932212}
-  m_LocalScale: {x: 1.4, y: 1.4, z: 1}
+  m_LocalPosition: {x: 4.87, y: -4.14, z: 0.30932212}
+  m_LocalScale: {x: 1.115394, y: 1.115394, z: 0.79671}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1044474918}
@@ -13283,52 +13322,52 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogs:
-  - speaker: 0
-    dialogue: "\uBC1C\uCE59\uD55C \uB144\uC774... \uB0B4 \uB4A4\uB97C \uBC1F\uC544?"
+  - speaker: 2
+    dialogue: "\uBC1C\uCE59\uD55C \uB144\uC774... \uB0B4 \uB4A4\uB97C \uBC1F\uC544? "
   - speaker: 1
-    dialogue: "\uD06D..."
-  - speaker: 0
+    dialogue: "\uD06D... "
+  - speaker: 2
     dialogue: "\uBCF8\uCCB4\uB3C4 \uC5C6\uB294 \uBD84\uC2E0 \uC8FC\uC81C\uC5D0 \uAC10\uD788
-      \uB0A0 \uB178\uB824?"
+      \uB0A0 \uB178\uB824? "
   - speaker: 1
-    dialogue: "\uBCF8\uCCB4\uB9CC \uC788\uC5C8\uC5B4\uB3C4 \uB10C..."
-  - speaker: 0
+    dialogue: "\uBCF8\uCCB4\uB9CC \uC788\uC5C8\uC5B4\uB3C4 \uB10C... "
+  - speaker: 2
     dialogue: "\uC788\uC9C0\uB3C4 \uC54A\uB294 \uBCF8\uCCB4\uB294 \uCC3E\uC544\uC11C
-      \uBB50\uD558\uB098~"
+      \uBB50\uD558\uB098~ "
   - speaker: 0
-    dialogue: "\uADF8\uB9CC\uB46C!"
-  - speaker: 1
-    dialogue: "\uB10C \uBB50\uC57C!"
+    dialogue: "\uADF8\uB9CC\uB46C! "
+  - speaker: 2
+    dialogue: "\uB10C \uBB50\uC57C! "
   - speaker: 0
-    dialogue: "...\uD64D\uAE38\uB3D9\uC774\uB2E4!"
-  - speaker: 0
+    dialogue: "...\uD64D\uAE38\uB3D9\uC774\uB2E4! "
+  - speaker: 2
     dialogue: "\uD64D\uAE38\uB3D9? \uD558! \uD64D\uAE38\uB3D9\uC740 \uC8FD\uC740\uC9C0
-      \uBA87\uBC31\uB144\uC774 \uC9C0\uB0AC\uC5B4!"
+      \uBA87\uBC31\uB144\uC774 \uC9C0\uB0AC\uC5B4! "
   - speaker: 0
-    dialogue: "\uADF8\uAC74 \uBAA8\uB974\uACA0\uACE0 \uB0B4 \uBD84\uC2E0 \uBCF4\uB0B4\uC918!"
-  - speaker: 0
-    dialogue: "\uB0B4\uBD84\uC2E0? \uB108\uAC00 \uBB54\uB370 \uB0B4 \uBD84\uC2E0\uC774\uB77C\uACE0...\n\uB108
-      \uC124\uB9C8 \uB108\uAC00 \uC9C4\uC9DC \uD64D\uAE38\uB3D9\uC774\uB77C\uACE0
-      \uC0DD\uAC01\uD558\uB294\uAC70\uC57C?"
+    dialogue: "\uADF8\uAC74 \uBAA8\uB974\uACA0\uACE0 \uB0B4 \uBD84\uC2E0 \uBCF4\uB0B4\uC918! "
+  - speaker: 2
+    dialogue: "\uB0B4 \uBD84\uC2E0? \uB108\uAC00 \uBB54\uB370 '\uB0B4 \uBD84\uC2E0'\uC774\uB77C\uACE0... "
+  - speaker: 2
+    dialogue: "\uB108 \uC124\uB9C8 \uB108\uAC00 \uC9C4\uC9DC \uD64D\uAE38\uB3D9\uC774\uB77C\uACE0
+      \uC0DD\uAC01\uD558\uB294\uAC70\uC57C? "
   imageDialogs:
-  - {fileID: 78905943}
-  - {fileID: 1680740220}
-  - {fileID: 78905943}
-  - {fileID: 1680740220}
-  - {fileID: 78905943}
-  - {fileID: 630746855}
-  - {fileID: 1680740220}
-  - {fileID: 630746855}
   - {fileID: 1680740220}
   - {fileID: 630746855}
   - {fileID: 78905943}
+  - {fileID: 603873025}
   textNames:
+  - {fileID: 1335066870}
+  - {fileID: 1335066870}
   - {fileID: 1335066870}
   - {fileID: 1335066870}
   textDialogues:
   - {fileID: 1197593236}
   - {fileID: 1197593236}
+  - {fileID: 1197593236}
+  - {fileID: 1197593236}
   objectArrows:
+  - {fileID: 2003685083}
+  - {fileID: 2003685083}
   - {fileID: 2003685083}
   - {fileID: 2003685083}
   typingSpeed: 0
