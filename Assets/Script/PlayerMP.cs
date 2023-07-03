@@ -9,6 +9,7 @@ public class PlayerMP : MonoBehaviour
     [SerializeField]
     public int playerMp0 { get; private set; }
     public int playerMp1 { get; private set; }
+    public int playerMp2 { get; private set; }
     public Image[] MpBar;
     public Text[] mpText;
     public int[] MaxMp;
@@ -17,13 +18,14 @@ public class PlayerMP : MonoBehaviour
         Instance = this;
         playerMp0 = MaxMp[0];
         playerMp1 = MaxMp[1];
+        playerMp2 = MaxMp[2];
     }
     private void Update()
     {
 
         mpText[0].text = playerMp0.ToString();
         mpText[1].text = playerMp1.ToString();
-
+        mpText[2].text = playerMp2.ToString();
     }
     public void SetMp0(int i)
     {
@@ -36,5 +38,11 @@ public class PlayerMP : MonoBehaviour
         playerMp1 += i;
         MpBar[1].fillAmount = (float)playerMp1 / MaxMp[1];
         playerMp1 = Mathf.Clamp(playerMp1, 0, MaxMp[1]);
+    }
+    public void SetMp2(int i)
+    {
+        playerMp2 += i;
+        MpBar[2].fillAmount = (float)playerMp2 / MaxMp[2];
+        playerMp2 = Mathf.Clamp(playerMp1, 0, MaxMp[2]);
     }
 }

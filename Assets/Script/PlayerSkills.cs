@@ -82,7 +82,7 @@ public class PlayerSkills : MonoBehaviour
                 //    rb.AddForce(new Vector2(posX, posY + 10f));
 
                 if (Input.GetKey(KeyCode.RightArrow))
-                    gameObject.transform.position =(new Vector3(posX + 5, posY + 0.2f, 0));
+                    gameObject.transform.position = (new Vector3(posX + 5, posY + 0.2f, 0));
                 else if (Input.GetKey(KeyCode.UpArrow))
                     gameObject.transform.position = (new Vector3(posX, posY + 5.2f, 0));
                 if (Input.GetKey(KeyCode.LeftArrow))
@@ -99,46 +99,56 @@ public class PlayerSkills : MonoBehaviour
                 //StopCoroutine("aftFlash");
                 break;
             case 1:
-                if (PlayerMP.Instance.playerMp0)
-                if (!isWater)
+                if (PlayerMP.Instance.playerMp0 > 0)
                 {
-                    if (isRight)
+                    if (!isWater)
                     {
-                        Effect[2].GetComponent<Air>().dir = 1;
-                        Instantiate(Effect[2], new Vector3(posX + 1, posY + 0.4f, 0), Quaternion.identity);
-                        
+                        if (isRight)
+                        {
+                            Effect[2].GetComponent<Air>().dir = 1;
+                            Instantiate(Effect[2], new Vector3(posX + 1, posY + 0.4f, 0), Quaternion.identity);
+
+                        }
+                        if (isLeft)
+                        {
+                            Effect[2].GetComponent<Air>().dir = -1;
+                            Instantiate(Effect[2], new Vector3(posX - 1, posY + 0.4f, 0), Quaternion.identity);
+
+                        }
                     }
-                    if (isLeft)
+                    else
                     {
-                        Effect[2].GetComponent<Air>().dir = -1;
-                        Instantiate(Effect[2], new Vector3(posX - 1, posY + 0.4f, 0), Quaternion.identity);
-                        
+                        if (isRight)
+                        {
+                            Effect[4].GetComponent<Air>().dir = 1;
+                            Instantiate(Effect[4], new Vector3(posX + 1, posY + 0.4f, 0), Quaternion.identity);
+
+                        }
+                        if (isLeft)
+                        {
+                            Effect[4].GetComponent<Air>().dir = -1;
+                            Instantiate(Effect[4], new Vector3(posX - 1, posY + 0.4f, 0), Quaternion.identity);
+
+                        }
                     }
-                }
-                else
-                {
-                    if (isRight)
-                    {
-                        Effect[4].GetComponent<Air>().dir = 1;
-                        Instantiate(Effect[4], new Vector3(posX + 1, posY + 0.4f, 0), Quaternion.identity);
-                        
-                    }
-                    if (isLeft)
-                    {
-                        Effect[4].GetComponent<Air>().dir = -1;
-                        Instantiate(Effect[4], new Vector3(posX - 1, posY + 0.4f, 0), Quaternion.identity);
-                        
-                    }
+                    PlayerMP.Instance.SetMp0(-20);
                 }
                 break;
             case 2:
-                if (isRight) { Instantiate(Effect[3], new Vector3(posX + 8, posY + 2.3f, 0), Quaternion.identity); }
-                if (isLeft) { Instantiate(Effect[3], new Vector3(posX - 8, posY + 2.3f, 0), Quaternion.identity); }
+                if (PlayerMP.Instance.playerMp1 > 0) { 
+                    if (isRight) { Instantiate(Effect[3], new Vector3(posX + 8, posY + 2.3f, 0), Quaternion.identity); }
+                    if (isLeft) { Instantiate(Effect[3], new Vector3(posX - 8, posY + 2.3f, 0), Quaternion.identity); }
+                    PlayerMP.Instance.SetMp1(-30);
+                }
                 break;
             case 3:
-                IPAD.SetActive(true); Ipad.gameObject.SetActive(true); //Time.timeScale = 0;
-                StartCoroutine(aftFlash());
-                StopCoroutine(aftFlash());
+                if (PlayerMP.Instance.playerMp2 > 0)
+                {
+                    IPAD.SetActive(true); Ipad.gameObject.SetActive(true); //Time.timeScale = 0;
+                    StartCoroutine(aftFlash());
+                    StopCoroutine(aftFlash());
+                    PlayerMP.Instance.SetMp2(-30);
+                }
                 break;
         }
         

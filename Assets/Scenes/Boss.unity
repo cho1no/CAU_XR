@@ -1776,10 +1776,12 @@ MonoBehaviour:
   MpBar:
   - {fileID: 1228955252}
   - {fileID: 1898486449}
+  - {fileID: 1972318120}
   mpText:
   - {fileID: 660673901}
   - {fileID: 894196783}
-  MaxMp: 6400000064000000
+  - {fileID: 1097355810}
+  MaxMp: 640000006400000064000000
 --- !u!114 &651946408
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1792,6 +1794,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d6fbf2c1d586b14ea70fe2d9e74b9c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  <playerMp0>k__BackingField: 0
+  <playerMp1>k__BackingField: 0
   MpBar:
   - {fileID: 1972318120}
   mpText:
