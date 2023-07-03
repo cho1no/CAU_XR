@@ -9,6 +9,11 @@ TagManager:
   - Water
   - WaterShot
   - Wall
+  - Thunder
+  - Boss_Shot
+  - Boss_Meteor
+  - Boss_Jump
+  - Boss_Smash
   layers:
   - Default
   - TransparentFX

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MoveBall : MonoBehaviour
 {
+    public int dir = 1;
     Animator ani;
     void Start()
     {
@@ -12,7 +13,7 @@ public class MoveBall : MonoBehaviour
     }
     void Update()
     {
-        transform.Translate(new Vector2(-5 * Time.deltaTime, 0));
+        transform.Translate(new Vector2(-5 * dir * Time.deltaTime, 0));
     }
 
     void DestroyFX()

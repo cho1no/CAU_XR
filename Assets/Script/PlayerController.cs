@@ -66,12 +66,29 @@ public class PlayerController : MonoBehaviour
         {
             isJump = false;
         }
+        if (collision.gameObject.tag.Equals("Enemy"))
+        {
+            PlayerHp.Instance.SetHp(-10);
+        }
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag.Equals("Enemy"))
+
+        if (collision.gameObject.tag.Equals("Boss_Shot"))
         {
-            PlayerHp.Instance.SetHp(-50);
+            PlayerHp.Instance.SetHp(-10);
+        }
+        if (collision.gameObject.tag.Equals("Boss_Smash"))
+        {
+            PlayerHp.Instance.SetHp(-10);
+        }
+        if (collision.gameObject.tag.Equals("Boss_Jump"))
+        {
+            PlayerHp.Instance.SetHp(-10);
+        }
+        if (collision.gameObject.tag.Equals("Boss_Meteor"))
+        {
+            PlayerHp.Instance.SetHp(-30);
         }
     }
 }

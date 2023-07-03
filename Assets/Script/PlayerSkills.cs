@@ -118,13 +118,13 @@ public class PlayerSkills : MonoBehaviour
                 {
                     if (isRight)
                     {
-                        Effect[2].GetComponent<Air>().dir = 1;
+                        Effect[4].GetComponent<Air>().dir = 1;
                         Instantiate(Effect[4], new Vector3(posX + 1, posY + 0.4f, 0), Quaternion.identity);
                         
                     }
                     if (isLeft)
                     {
-                        Effect[2].GetComponent<Air>().dir = -1;
+                        Effect[4].GetComponent<Air>().dir = -1;
                         Instantiate(Effect[4], new Vector3(posX - 1, posY + 0.4f, 0), Quaternion.identity);
                         
                     }
