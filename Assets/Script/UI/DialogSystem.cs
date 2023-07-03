@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 
-public enum Speaker { 홍민정 = 0, 학생, asdf}
+public enum Speaker { 홍민정 = 0, 여학생, 방랑자, 분신}
 
 public class DialogSystem : MonoBehaviour
 {
@@ -28,7 +28,7 @@ public class DialogSystem : MonoBehaviour
 
     public void Setup()
     {
-        for (int i = 0; i < 2; ++i)
+        for (int i = 0; i < 4; ++i)
         {
             // 모든 대화 관련 게임오브젝트 비활성화
             InActiveObjects(i);
